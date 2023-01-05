@@ -1,5 +1,5 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution')
+require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   root: true,
@@ -33,6 +33,12 @@ module.exports = {
       rules: {
         '@typescript-eslint/explicit-function-return-type': 'off'
       }
+    },
+    {
+      files: ['*.ts', '*.js'],
+      rules: {
+        semi: ['error', 'always']
+      }
     }
   ]
-}
+};
