@@ -1,0 +1,1 @@
+cmd_Release/add_ab.node := c++ -bundle -undefined dynamic_lookup -Wl,-search_paths_first -mmacosx-version-min=10.13 -arch arm64 -L./Release -stdlib=libc++  -o Release/add_ab.node Release/obj.target/add_ab/add.o 

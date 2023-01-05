@@ -1,7 +1,7 @@
 {
   "targets": [
     {
-      # 编译出来的 xxx.node 文件名称，这里是 addon.node
+      # 编译出来的 xxx.node 文件名称
       "target_name": "hello_world",
       # 被编译的 cpp 源文件
       "sources": [
@@ -16,6 +16,16 @@
         "<!@(node -p \"require('node-addon-api').include\")"
       ],
       # 添加一个预编译宏，避免编译的时候并行抛错
+      'defines': [ 'NAPI_DISABLE_CPP_EXCEPTIONS' ],
+    },
+    {
+      "target_name": "add_ab",
+      "sources": [
+        "add.cpp"
+      ],
+      "include_dirs": [
+        "<!@(node -p \"require('node-addon-api').include\")"
+      ],
       'defines': [ 'NAPI_DISABLE_CPP_EXCEPTIONS' ],
     }
   ]

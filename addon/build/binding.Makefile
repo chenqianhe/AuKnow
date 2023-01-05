@@ -3,4 +3,4 @@
 export builddir_name ?= ./build/.
 .PHONY: all
 all:
-	$(MAKE) hello_world
+	$(MAKE) hello_world add_ab

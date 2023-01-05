@@ -3,6 +3,7 @@ import * as path from 'path';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils';
 
 const { hello } = require('../../addon/build/Release/hello_world');
+const { add } = require('../../addon/build/Release/add_ab');
 
 function createWindow(): void {
   // Create the browser window.
@@ -62,7 +63,7 @@ app.whenReady().then(() => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
 
-  console.log(hello());
+  console.log(hello(), add(1, 2));
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common
